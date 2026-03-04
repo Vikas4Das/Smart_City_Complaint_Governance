@@ -1,0 +1,19 @@
+<div class="center">
+  <mat-card class="card">
+    <h2>Smart City Portal</h2>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="credentials.email">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" [(ngModel)]="credentials.password">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="login()">
+      Login
+    </button>
+  </mat-card>
+</div>

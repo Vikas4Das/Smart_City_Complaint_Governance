@@ -1,0 +1,593 @@
+<!-- ============================================
+LANDING PAGE - Smart City Portal
+Premium SaaS-style landing page
+============================================ -->
+
+<!-- Navigation -->
+<nav class="navbar" [class.scrolled]="isScrolled()">
+  <div class="nav-container">
+    <div class="nav-brand">
+      <mat-icon class="brand-icon">location_city</mat-icon>
+      <span class="brand-text">SmartCity</span>
+    </div>
+    
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#dashboard-preview">Dashboard</a>
+      <a href="#benefits">Benefits</a>
+    </div>
+    
+    <div class="nav-actions">
+      <button mat-button class="btn-ghost" routerLink="/login">Login</button>
+      <button mat-raised-button class="btn-primary" routerLink="/register">Get Started</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="grid-pattern"></div>
+  </div>
+  
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="badge">🚀 Now with AI-Powered Analytics</div>
+      <h1 class="hero-title">
+        Transforming<br>
+        <span class="gradient-text">Urban Governance</span>
+      </h1>
+      <p class="hero-subtitle">
+        A modern, transparent complaint management system that connects citizens, 
+        officers, and administrators for faster resolution and better governance.
+      </p>
+      <div class="hero-actions">
+        <button mat-raised-button class="btn-hero-primary" routerLink="/register">
+          <mat-icon>add_circle</mat-icon>
+          Raise Complaint
+        </button>
+        <button mat-stroked-button class="btn-hero-secondary" routerLink="/login">
+          <mat-icon>login</mat-icon>
+          Login
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">50K+</span>
+          <span class="stat-label">Complaints Resolved</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">10K+</span>
+          <span class="stat-label">Active Users</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">Satisfaction Rate</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      <div class="floating-card card-1">
+        <mat-icon class="card-icon success">check_circle</mat-icon>
+        <div class="card-content">
+          <span class="card-title">Complaint Resolved</span>
+          <span class="card-subtitle">Pothole repaired</span>
+        </div>
+      </div>
+      <div class="floating-card card-2">
+        <mat-icon class="card-icon warning">pending</mat-icon>
+        <div class="card-content">
+          <span class="card-title">In Progress</span>
+          <span class="card-subtitle">Street light repair</span>
+        </div>
+      </div>
+      <div class="floating-card card-3">
+        <mat-icon class="card-icon info">notifications</mat-icon>
+        <div class="card-content">
+          <span class="card-title">New Update</span>
+          <span class="card-subtitle">Water supply issue</span>
+        </div>
+      </div>
+      <div class="hero-illustration">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <div class="app-header">
+              <mat-icon>menu</mat-icon>
+              <span>SmartCity</span>
+              <mat-icon>notifications</mat-icon>
+            </div>
+            <div class="app-content">
+              <div class="complaint-card-mini">
+                <div class="complaint-header-mini">
+                  <span class="complaint-id">#CMPL-2847</span>
+                  <span class="status-badge pending">Pending</span>
+                </div>
+                <span class="complaint-title-mini">Road repair needed on Main Street</span>
+                <div class="complaint-meta-mini">
+                  <span><mat-icon>location_on</mat-icon> Downtown</span>
+                  <span><mat-icon>schedule</mat-icon> 2h ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features" id="features">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-badge">Features</span>
+      <h2 class="section-title">Everything You Need for <br> <br> Smart City Management </h2>
+      <p class="section-subtitle">
+        Powerful tools designed to streamline complaint resolution and improve citizen engagement.
+      </p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <mat-icon>bolt</mat-icon>
+        </div>
+        <h3>Real-time Tracking</h3>
+        <p>Monitor complaint status instantly with live updates and notifications at every stage.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <mat-icon>location_on</mat-icon>
+        </div>
+        <h3>Geo-tagging Support</h3>
+        <p>Pin exact locations with interactive maps for precise issue identification and resolution.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <mat-icon>assignment_ind</mat-icon>
+        </div>
+        <h3>Officer Assignment</h3>
+        <p>Smart routing assigns complaints to the right officers based on expertise and location.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <mat-icon>analytics</mat-icon>
+        </div>
+        <h3>Analytics Dashboard</h3>
+        <p>Powerful insights with charts, reports, and trends for data-driven decision making.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <mat-icon>admin_panel_settings</mat-icon>
+        </div>
+        <h3>Role-based Access</h3>
+        <p>Secure multi-tier access for citizens, officers, and administrators with custom permissions.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <mat-icon>trending_up</mat-icon>
+        </div>
+        <h3>Escalation Management</h3>
+        <p>Automatic escalation workflows ensure critical issues get priority attention.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-it-works" id="how-it-works">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-badge">Process</span>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">
+        Get your complaints resolved in three simple steps
+      </p>
+    </div>
+    
+    <div class="steps-container">
+      <div class="step-line"></div>
+      
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <div class="step-icon">
+          <mat-icon>person_add</mat-icon>
+        </div>
+        <h3>Register</h3>
+        <p>Create your free account with just your email and basic details.</p>
+      </div>
+      
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <div class="step-icon">
+          <mat-icon>edit_note</mat-icon>
+        </div>
+        <h3>Submit Complaint</h3>
+        <p>Describe the issue, add photos, and pin the location on the map.</p>
+      </div>
+      
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <div class="step-icon">
+          <mat-icon>verified</mat-icon>
+        </div>
+        <h3>Track Resolution</h3>
+        <p>Follow real-time updates until your complaint gets resolved.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dashboard Preview Section -->
+<section class="dashboard-preview" id="dashboard-preview">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-badge">Dashboards</span>
+      <h2 class="section-title">Powerful Dashboards for<br> <br> Every Role</h2>
+      <p class="section-subtitle">
+        Tailored interfaces designed for maximum productivity
+      </p>
+    </div>
+    
+    <div class="dashboard-grid">
+      <div class="dashboard-card citizen">
+        <div class="dashboard-mockup">
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="mockup-title">Citizen Portal</span>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-stat">
+              <mat-icon>assignment</mat-icon>
+              <span>My Complaints</span>
+              <strong>12</strong>
+            </div>
+            <div class="mockup-stat">
+              <mat-icon>check_circle</mat-icon>
+              <span>Resolved</span>
+              <strong>8</strong>
+            </div>
+            <div class="mockup-stat">
+              <mat-icon>pending</mat-icon>
+              <span>Pending</span>
+              <strong>4</strong>
+            </div>
+            <button class="mockup-btn">New Complaint</button>
+          </div>
+        </div>
+        <div class="dashboard-info">
+          <h3>Citizen Portal</h3>
+          <p>Submit and track your complaints, view history, and receive updates.</p>
+        </div>
+      </div>
+      
+      <div class="dashboard-card officer">
+        <div class="dashboard-mockup">
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="mockup-title">Officer Portal</span>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-stat">
+              <mat-icon>task_alt</mat-icon>
+              <span>Assigned Tasks</span>
+              <strong>15</strong>
+            </div>
+            <div class="mockup-stat">
+              <mat-icon>pending_actions</mat-icon>
+              <span>In Progress</span>
+              <strong>6</strong>
+            </div>
+            <div class="mockup-stat">
+              <mat-icon>done_all</mat-icon>
+              <span>Completed</span>
+              <strong>9</strong>
+            </div>
+            <button class="mockup-btn">View Tasks</button>
+          </div>
+        </div>
+        <div class="dashboard-info">
+          <h3>Officer Portal</h3>
+          <p>Manage assigned complaints, update status, and communicate with citizens.</p>
+        </div>
+      </div>
+      
+      <div class="dashboard-card admin">
+        <div class="dashboard-mockup">
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="mockup-title">Admin Panel</span>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-chart">
+              <div class="chart-bar" style="height: 60%"></div>
+              <div class="chart-bar" style="height: 80%"></div>
+              <div class="chart-bar" style="height: 45%"></div>
+              <div class="chart-bar" style="height: 90%"></div>
+              <div class="chart-bar" style="height: 70%"></div>
+            </div>
+            <div class="mockup-stats-row">
+              <span>Total: 1,247</span>
+              <span>+12%</span>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-info">
+          <h3>Admin Panel</h3>
+          <p>Full analytics, officer management, and system configuration.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="benefits" id="benefits">
+  <div class="section-container">
+    <div class="benefits-wrapper">
+      <div class="benefits-content">
+        <span class="section-badge">Benefits</span>
+        <h2 class="section-title">Why Choose SmartCity?</h2>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <mat-icon>speed</mat-icon>
+          </div>
+          <div class="benefit-text">
+            <h4>Faster Resolution</h4>
+            <p>Reduce complaint resolution time by up to 60% with automated routing and tracking.</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <mat-icon>visibility</mat-icon>
+          </div>
+          <div class="benefit-text">
+            <h4>Complete Transparency</h4>
+            <p>Every step is logged and visible to citizens, ensuring accountability.</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <mat-icon>public</mat-icon>
+          </div>
+          <div class="benefit-text">
+            <h4>Digital Governance</h4>
+            <p>Modernize civic engagement with paperless, efficient processes.</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <mat-icon>groups</mat-icon>
+          </div>
+          <div class="benefit-text">
+            <h4>Better Engagement</h4>
+            <p>Connect citizens and government like never before for improved services.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="benefits-visual">
+        <div class="benefit-graphic">
+          <div class="circle-graphic">
+            <div class="inner-circle">
+              <mat-icon>location_city</mat-icon>
+            </div>
+          </div>
+          <div class="floating-element fe-1">
+            <mat-icon>check_circle</mat-icon>
+            <span>Transparent</span>
+          </div>
+          <div class="floating-element fe-2">
+            <mat-icon>bolt</mat-icon>
+            <span>Fast</span>
+          </div>
+          <div class="floating-element fe-3">
+            <mat-icon>security</mat-icon>
+            <span>Secure</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-badge">Testimonials</span>
+      <h2 class="section-title">What People Say</h2>
+    </div>
+    
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar">RP</div>
+          <div class="author-info">
+            <span class="author-name">Rajesh Patel</span>
+            <span class="author-role">Citizen, Mumbai</span>
+          </div>
+        </div>
+        <p class="testimonial-text">
+          "The app made it so easy to report a road issue. Within 2 days, it was fixed! 
+          This is the kind of governance we need."
+        </p>
+        <div class="testimonial-rating">
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+        </div>
+      </div>
+      
+      <div class="testimonial-card featured">
+        <div class="testimonial-header">
+          <div class="avatar">SK</div>
+          <div class="author-info">
+            <span class="author-name">Sarah Kim</span>
+            <span class="author-role">Municipal Officer</span>
+          </div>
+        </div>
+        <p class="testimonial-text">
+          "The dashboard gives me instant visibility into all complaints in my zone. 
+          I can prioritize and assign tasks efficiently. Game changer!"
+        </p>
+        <div class="testimonial-rating">
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+        </div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar">AM</div>
+          <div class="author-info">
+            <span class="author-name">Amit Mishra</span>
+            <span class="author-role">City Administrator</span>
+          </div>
+        </div>
+        <p class="testimonial-text">
+          "The analytics help us identify recurring issues and allocate budget wisely. 
+          Citizen satisfaction has increased significantly."
+        </p>
+        <div class="testimonial-rating">
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star_half</mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-full">
+  <div class="cta-overlay"></div>
+
+  <div class="cta-wrapper">
+
+    <!-- LEFT CONTENT -->
+    <div class="cta-left">
+      <h2>Ready to Build a Smarter <br> <br> <br>City?</h2>
+      <p>
+        Connect with our SmartCity team and transform urban living with
+        technology-driven solutions.
+      </p>
+
+      <div class="cta-buttons">
+        <button mat-raised-button class="btn-primary" routerLink="/register">
+          Get Started
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+
+        <button mat-stroked-button class="btn-secondary" routerLink="/login">
+          Login
+        </button>
+      </div>
+    </div>
+
+    <!-- RIGHT CONTACT FORM -->
+    <div class="cta-right">
+      <h3>Contact Us</h3>
+
+      <form>
+        <mat-form-field appearance="outline">
+          <mat-label>Full Name</mat-label>
+          <input matInput type="text" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email Address</mat-label>
+          <input matInput type="email" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Your Message</mat-label>
+          <textarea matInput rows="4"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button class="btn-submit">
+          Send Message
+        </button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="brand">
+          <mat-icon>location_city</mat-icon>
+          <span>SmartCity</span>
+        </div>
+        <p>Transforming urban governance through technology and citizen engagement.</p>
+        <div class="social-links">
+          <a href="#"><mat-icon>facebook</mat-icon></a>
+          <a href="#"><mat-icon>twitter</mat-icon></a>
+          <a href="#"><mat-icon>linkedin</mat-icon></a>
+          <a href="#"><mat-icon>instagram</mat-icon></a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#dashboard-preview">Dashboards</a>
+          <a href="#">Pricing</a>
+        </div>
+        
+        <div class="link-group">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+        
+        <div class="link-group">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 SmartCity. All rights reserved.</p>
+      <p>Built with ❤️ for better governance</p>
+    </div>
+  </div>
+</footer>
