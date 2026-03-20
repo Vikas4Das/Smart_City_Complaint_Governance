@@ -50,12 +50,10 @@ public class ComplaintServiceImpl implements ComplaintService {
 
         Complaint savedComplaint = complaintRepository.save(complaint);
 
-        // Save status history
         StatusHistory history = new StatusHistory();
         history.setComplaint(savedComplaint);
         history.setStatus("PENDING");
         history.setUpdatedAt(LocalDateTime.now());
-
         statusHistoryRepository.save(history);
 
         return mapToResponse(savedComplaint);
@@ -64,7 +62,6 @@ public class ComplaintServiceImpl implements ComplaintService {
     // Admin gets all complaints
     @Override
     public List<ComplaintResponse> getAllComplaints() {
-
         return complaintRepository.findAll()
                 .stream()
                 .map(this::mapToResponse)
@@ -84,7 +81,7 @@ public class ComplaintServiceImpl implements ComplaintService {
                 .collect(Collectors.toList());
     }
 
-    // Officer gets assigned complaints
+    // Officer gets assigned complaints (by username)
     @Override
     public List<ComplaintResponse> getComplaintsByOfficer(String username) {
 
@@ -97,7 +94,7 @@ public class ComplaintServiceImpl implements ComplaintService {
                 .collect(Collectors.toList());
     }
 
-    // Officer updates complaint status
+    // Officer updates complaint status (simple)
     @Override
     public ComplaintResponse updateStatus(Long complaintId, String status) {
 
@@ -105,18 +102,90 @@ public class ComplaintServiceImpl implements ComplaintService {
                 .orElseThrow(() -> new RuntimeException("Complaint not found"));
 
         complaint.setStatus(status);
+        Complaint updated = complaintRepository.save(complaint);
 
-        Complaint updatedComplaint = complaintRepository.save(complaint);
-
-        // Save status history
         StatusHistory history = new StatusHistory();
-        history.setComplaint(updatedComplaint);
+        history.setComplaint(updated);
         history.setStatus(status);
         history.setUpdatedAt(LocalDateTime.now());
-
         statusHistoryRepository.save(history);
 
-        return mapToResponse(updatedComplaint);
+        return mapToResponse(updated);
+    }
+
+    // Assign complaint to officer (ADMIN)
+    @Override
+    public ComplaintResponse assignComplaint(Long complaintId, Long officerId) {
+
+        Complaint complaint = complaintRepository.findById(complaintId)
+                .orElseThrow(() -> new RuntimeException("Complaint not found"));
+
+        User officer = userRepository.findById(officerId)
+                .orElseThrow(() -> new RuntimeException("Officer not found"));
+
+        complaint.setAssignedOfficer(officer);
+        complaint.setStatus("IN_PROGRESS");
+
+        Complaint updated = complaintRepository.save(complaint);
+
+        StatusHistory history = new StatusHistory();
+        history.setComplaint(updated);
+        history.setStatus("IN_PROGRESS");
+        history.setUpdatedAt(LocalDateTime.now());
+        statusHistoryRepository.save(history);
+
+        return mapToResponse(updated);
+    }
+
+    // Officer updates status with username validation
+    @Override
+    public ComplaintResponse updateStatus(Long complaintId, String status, String officerUsername) {
+
+        Complaint complaint = complaintRepository.findById(complaintId)
+                .orElseThrow(() -> new RuntimeException("Complaint not found"));
+
+        User officer = userRepository.findByUsername(officerUsername)
+                .orElseThrow(() -> new RuntimeException("Officer not found"));
+
+        // Validate officer is assigned to this complaint
+        if (complaint.getAssignedOfficer() == null ||
+                !complaint.getAssignedOfficer().getId().equals(officer.getId())) {
+            throw new RuntimeException("You are not assigned to this complaint");
+        }
+
+        complaint.setStatus(status);
+        Complaint updated = complaintRepository.save(complaint);
+
+        StatusHistory history = new StatusHistory();
+        history.setComplaint(updated);
+        history.setStatus(status);
+        history.setUpdatedAt(LocalDateTime.now());
+        statusHistoryRepository.save(history);
+
+        return mapToResponse(updated);
+    }
+
+    // Get assigned complaints by officer username
+    @Override
+    public List<ComplaintResponse> getAssignedComplaints(String officerUsername) {
+
+        User officer = userRepository.findByUsername(officerUsername)
+                .orElseThrow(() -> new RuntimeException("Officer not found"));
+
+        return complaintRepository.findByAssignedOfficerId(officer.getId())
+                .stream()
+                .map(this::mapToResponse)
+                .collect(Collectors.toList());
+    }
+
+    // Get single complaint by ID
+    @Override
+    public ComplaintResponse getComplaintById(Long complaintId) {
+
+        Complaint complaint = complaintRepository.findById(complaintId)
+                .orElseThrow(() -> new RuntimeException("Complaint not found"));
+
+        return mapToResponse(complaint);
     }
 
     // Convert Entity → DTO
