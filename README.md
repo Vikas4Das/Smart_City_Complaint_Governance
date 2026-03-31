@@ -1,6 +1,10 @@
 <img width="1919" height="907" alt="Screenshot 2026-03-30 104519" src="https://github.com/user-attachments/assets/accd7406-03f6-4636-990e-bcfd6ad52ece" />🚀 Smart City Complaint & Governance System
 
-A full-stack Smart City Governance platform that enables citizens to register complaints and allows authorities to manage, track, and resolve civic issues efficiently.
+The Smart City Complaint & Governance System is a full-stack web application designed to streamline communication between citizens and city authorities. It provides a centralized platform where users can report civic issues such as road damage, waste management problems, water leakage, and other public service concerns.
+
+The system ensures transparency and efficiency by enabling real-time complaint tracking, role-based access control, and structured workflow management. Citizens can easily submit complaints with location details and track their status, while administrators and officers can monitor, assign, and resolve issues through an intuitive dashboard.
+
+By integrating modern technologies and scalable architecture, the platform aims to improve urban governance, enhance accountability, and promote faster resolution of public issues, contributing to the development of smarter and more responsive cities.
 
 📌 Features
 
