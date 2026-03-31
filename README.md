@@ -1,4 +1,4 @@
-🚀 Smart City Complaint & Governance System
+<img width="1919" height="907" alt="Screenshot 2026-03-30 104519" src="https://github.com/user-attachments/assets/accd7406-03f6-4636-990e-bcfd6ad52ece" />🚀 Smart City Complaint & Governance System
 
 A full-stack Smart City Governance platform that enables citizens to register complaints and allows authorities to manage, track, and resolve civic issues efficiently.
 
@@ -21,10 +21,12 @@ Dashboard Analytics
 View Assigned Complaints
 Update Status (Under Process / Solved)
 Track Complaint Progress
+
 🗺️ Map Integration
 Users can select complaint location using map
 Stores latitude & longitude
 Helps visualize problem areas
+
 🛠 Tech Stack
 🔹 Frontend
 React
@@ -37,3 +39,11 @@ JWT Authentication
 REST APIs
 🔹 Database
 MySQL
+
+
+
+
+Output:
+1. Home page
+ 
+
